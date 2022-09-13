@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color:blue;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <p id="test1"></p>
+    <p id="test"></p>
+    <script>
+        var arr = [];
+        let length = window.prompt("Enter the  length of the  array");
+        
+        for (i=0; i<length; i++){
+            let a = window.prompt("Enter the  inputs: ");
+            arr.push(a);
+            arr.sort();
+        }
+        document.getElementById('test1').innerHTML = 'The input elements in  the array are: '+ arr;
+        sub_seq();
+        
+              
+        function sub_seq(){
+            
+            var count = 0;
+            for(i=0; i <= arr.length;i++){
+              var a = arr[i];
+              a++;  
+              if(arr[i+1]==a){
+                count++;
+        }
+        }
+        document.getElementById('test').innerHTML = count;
+}
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      p{
+        font-size:50px;
+        color: red;
+      }
+    </style>
+</head>
+<body>
+  <p id="print"></p>
+<script>
+       
+       
+let f_player = window.prompt("Enter the position of first player: ");
+let s_player = window.prompt("Enter the position of second player: ");
+
+function possibility(a, b){
+    if(a > 0 && b > 0){
+        if(a >= b){
+           document.getElementById('print').innerHTML = "False";
+        } else {
+            let diff = b - a;
+            if(diff > 0 && diff <= 6){
+              document.getElementById('print').innerHTML = "True";
+            } else {
+              document.getElementById('print').innerHTML = "False";
+            }
+        }
+    } else {
+      document.getElementById('print').innerHTML = "Invalid! Please Enter the valid inputs";
+    }
+}
+possibility(f_player, s_player);
+  </script>
+</body>
+</html>

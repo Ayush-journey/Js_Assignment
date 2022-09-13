@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    p {
+        font-size:100px;
+        color:blueviolet;
+    }
+
+</style>
+</head>
+
+<body>
+    <p id="test"></p>
+    <script>
+    
+    let s = window.prompt("Enter an alphabet");
+    s.toLowerCase();
+    
+    
+       function nearestVowel(a) {
+        let obj = { a: 99, e: 99, i: 99, o: 99, u: 99 };
+        let min = 99;
+        let sol = "";
+        let vowelArr = ['a', 'e', 'i', 'o', 'u'];
+        for (let char of vowelArr) {
+          let diff = Math.abs(char.charCodeAt(0) - s.charCodeAt(0));
+          if (diff < min) {
+            min = diff;
+            sol = char;
+          }
+        }
+        document.getElementById('test').innerHTML = sol;
+      }
+            
+      nearestVowel(s);
+
+    </script>
+</body>
+</html>

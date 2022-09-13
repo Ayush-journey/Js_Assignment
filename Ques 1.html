@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size:50px;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="Date"></p>
+    <script>
+        let year_two_digit = window.prompt("Enter the  two digit year: ");
+        
+        if (year_two_digit < 35 && year_two_digit >= 10) {
+            document.getElementById('Date').innerHTML= "The required year is 20"+year_two_digit;
+        }
+        
+        else if(year_two_digit < 10 && year_two_digit >= 0){
+            document.getElementById('Date').innerHTML= "The required year is 200"+year_two_digit;
+        }
+
+        else if (year_two_digit > 35 && year_two_digit < 100){
+            document.getElementById('Date').innerHTML= "The required year is 19"+year_two_digit;
+        }
+
+        else{
+            document.getElementById('Date').innerHTML= `Invalid Input! Please enter a two digit Year.`;
+        }
+
+    </script>
+</body>
+</html>

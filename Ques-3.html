@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size:30px;
+            color:brown;
+        }
+        #text{
+            font-size:50px ; 
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <p id="number"></p>
+    <p id="length_of_array"></p>
+    <p id="text"></p>    
+    <script>
+        let num = window.prompt("Enter the Number: ");
+        let length = window.prompt("Enter the number of required multiples: ");
+        const num1 = document.getElementById('number').innerHTML= "The Number is: " + num;
+        const len = document.getElementById('length_of_array').innerHTML= "The required number of multiples: " + length;
+        let arr = [];
+        function arrayOfMultiples(a, b) {
+            for (i=1; i<=length ; i++) {
+                   arr.push(num * i);
+                }
+            };
+        arrayOfMultiples(num, length);
+        const text = document.getElementById('text').innerHTML = "The required Array is: " + arr;
+    </script>
+</body>
+</html>
