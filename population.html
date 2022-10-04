@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #country{
+            margin-bottom: 2px;
+        }
+        #info{
+            margin: 5px;
+        }
+        button{
+            border: none;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Country" name="country" id="country"><br>
+    <button onclick="getPopulationFunc(document.getElementById('country').value)">Get Population</button> 
+    <ul id="info"></ul>
+    <script>
+
+        let summary = document.getElementById("info");
+        const  getPopulationFunc  = async (country) => {
+            const url = `https://jsonmock.hackerrank.com/api/countries/search?name=${country}`;
+            let response  = await fetch(url);
+            let data = await response.json();
+            console.log(data);
+            let listPopulationData = document.createElement("li");
+            listPopulationData.innerHTML = `Country:  ${data?.data[0]?.name} , Population: ${data?.data[0]?.population}`;
+            summary.appendChild(listPopulationData);
+        };
+    </script>
+
+</body>
+</html>
